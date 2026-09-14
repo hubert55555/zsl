@@ -39,8 +39,20 @@
         </section>
         <section id="kontakt">
             <h2>Kontakt</h2>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum excepturi repellendus eum dignissimos ea rem nesciunt amet ullam voluptatibus odio laboriosam nobis, mollitia fuga corporis porro distinctio dolore sint. Adipisci?
-            A impedit porro deserunt odit illum consequuntur cum! Beatae possimus necessitatibus asperiores esse? Ratione dolorem quas assumenda, eaque eius vel repellendus, odit ad sapiente est veniam asperiores rerum dignissimos perspiciatis.
+            <form action="">
+                <label for="imie">Imię</label>
+                <input type="text" name="imie" id="imie">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="temat">Temat</label>
+                <select name="temat" id="temat">
+                    <option value="wspolpraca">współpraca</option>
+                    <option value="reklamacje">reklamacje</option>
+                    <option value="inny">inny</option>
+                </select>
+                <input type="submit" value="Wyślij">
+            </form>
+            <div id="komunikat"></div>
         </section>
     </main>
     <footer>
