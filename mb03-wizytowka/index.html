@@ -32,24 +32,30 @@
             <h2>Umiejętności</h2>
             <ul id="lista-umiejetnosci">
                 <!--skrypt-->
-                <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero rem accusantium quidem, quibusdam sed maxime consequuntur odit ipsam voluptas nobis reiciendis fugiat, neque debitis commodi repudiandae repellat sequi culpa nostrum!</li>
-                <li>Iure praesentium, velit ad vero aspernatur officiis maxime eveniet iusto numquam soluta itaque est provident? Et ipsam accusamus, dolorum praesentium aperiam natus inventore reiciendis similique consequatur corrupti porro culpa vitae?</li>
-                <li>Saepe, ab ipsam provident consequuntur repellendus est, placeat iste quod culpa illum magnam sed minima, sunt quam! Ut eius molestiae eveniet inventore modi, temporibus id unde rem dicta nulla! Non.</li>
             </ul>
         </section>
         <section id="kontakt">
             <h2>Kontakt</h2>
             <form action="">
-                <label for="imie">Imię</label>
-                <input type="text" name="imie" id="imie">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="temat">Temat</label>
-                <select name="temat" id="temat">
-                    <option value="wspolpraca">współpraca</option>
-                    <option value="reklamacje">reklamacje</option>
-                    <option value="inny">inny</option>
-                </select>
+                <div class="cell">
+                    <label for="imie">Imię</label>
+                    <input type="text" name="imie" id="imie">
+                </div>
+
+                <div class="cell">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="cell">
+                    <label for="temat">Temat</label>
+                    <select name="temat" id="temat">
+                        <option value="wspolpraca">współpraca</option>
+                        <option value="reklamacje">reklamacje</option>
+                        <option value="inny">inny</option>
+                    </select>
+                </div>
+                
                 <input type="submit" value="Wyślij">
             </form>
             <div id="komunikat"></div>

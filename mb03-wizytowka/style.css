@@ -8,6 +8,7 @@ body {
 
 :root {
     --primary: black;
+    --secondary: gray;
     --accent: rgb(0, 154, 192);
 }
 
@@ -19,7 +20,7 @@ body {
 nav {
     display: flex;
     flex-direction: row;
-    gap: 0 2em;
+    gap: 2em;
 }
 
 section {
@@ -39,4 +40,38 @@ a:hover {
 
 html {
     scroll-behavior: smooth;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+input[type="submit"] {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: .75em 2em;
+    cursor: pointer;
+    border-radius: 0.5em;
+    width: fit-content;
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125em;
+    width: fit-content;
+}
+
+.cell label {
+    font-size: 0.875em;
+    color: var(--secondary);
+}
+
+input, textarea, select {
+    padding: 0.5em;
+    border: 1px solid var(--secondary);
+    border-radius: 0.5em;
 }
