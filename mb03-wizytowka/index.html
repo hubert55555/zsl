@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubert Piątek</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hubert Piątek</h1>
+        <p>Interesuję się programowaniem, muzyką i sportem.</p>
+    </header>
+    <nav>
+        <div class="nav-btn">
+            <a href="#o-mnie">O mnie</a>
+        </div>
+        <div class="nav-btn">
+            <a href="#umiejetnosci">Umiejętności</a>
+        </div>
+        <div class="nav-btn">
+            <a href="#kontakt">Kontakt</a>
+        </div>
+            <a href="#_" id="zmien-motyw">Zmień motyw</a>
+    </nav>
+    <main>
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore, laborum dolorem placeat reiciendis ab unde voluptas quidem libero perferendis cum iure. Voluptate laudantium saepe delectus odio ad consequuntur animi.
+            Minima aspernatur harum quis enim, vitae aliquid fugit dicta odit aliquam. Voluptates, mollitia. Illo cumque vero provident quidem sit. Odio obcaecati tempore similique totam maiores aliquid dolorem enim repudiandae placeat?
+        </section>
+        <section id="umiejetnosci">
+            <h2>Umiejętności</h2>
+            <ul id="lista-umiejetnosci">
+                <!--skrypt-->
+            </ul>
+        </section>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <form action="">
+                <div class="cell">
+                    <label for="imie">Imię</label>
+                    <input type="text" name="imie" id="imie">
+                </div>
+
+                <div class="cell">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="cell">
+                    <label for="temat">Temat</label>
+                    <select name="temat" id="temat">
+                        <option value="wspolpraca">współpraca</option>
+                        <option value="reklamacje">reklamacje</option>
+                        <option value="inny">inny</option>
+                    </select>
+                </div>
+
+                <div class="cell">
+                    <label for="wiadomosc">Wiadomość</label>
+                    <textarea name="wiadomosc" id="wiadomosc"></textarea>
+                </div>
+                
+                <input type="submit" value="Wyślij">
+            </form>
+            <div id="komunikat"></div>
+        </section>
+    </main>
+    <footer>
+        <p><b>2026 programowanie aplikacji zaawansowanych webowych</b></p>
+    </footer>
+
+    <script src="scrjpt.js"></script>
+</body>
+</html>
