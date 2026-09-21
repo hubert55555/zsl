@@ -40,3 +40,12 @@ document.addEventListener("submit", function (event) {
     komunikat.textContent = `Dziękuję za wiadomość ${dane.imie} w temacie ${dane.temat}.`;
     document.querySelector("form").reset();
 });
+
+let zmienMotywBtn = document.querySelector("#zmien-motyw");
+zmienMotywBtn.addEventListener("click", function () {
+    if (document.documentElement.getAttribute("data-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+        document.documentElement.setAttribute("data-theme", "light");
+    }
+});
