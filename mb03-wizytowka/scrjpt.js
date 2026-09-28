@@ -1,28 +1,16 @@
-const umiejetnosci = [
-    "C++",
-    "C#",
-    "Python",
-    "JavaScript",
-    "HTML",
-    "CSS"
-];
+import { wyswietlUmiejetnosci } from "./display-skills.js";
 
-let listaUmiejetnosci = document.querySelector("#lista-umiejetnosci");
-for (let umiejetnosc of umiejetnosci) {
-    let li = document.createElement("li");
-    li.textContent = umiejetnosc;
-    listaUmiejetnosci.appendChild(li);
-}
+wyswietlUmiejetnosci();
 
 let komunikat = document.querySelector("#komunikat");
 
-document.addEventListener("submit", function (event) {
+document.addEventListener("submit", (event) => {
     event.preventDefault();
     komunikat.style.color = "var(--primary)";
-    let imie = document.querySelector("#imie").value;
-    let email = document.querySelector("#email").value;
-    let temat = document.querySelector("#temat").value;
-    let wiadomosc = document.querySelector("#wiadomosc").value;
+    let formularz = document.querySelector("form");
+    const dane = Object.fromEntries(new FormData(formularz));
+
+    const {imie, email, temat, tresc} = dane;
 
     if (imie.trim() === "" || email.trim() === "") {
         komunikat.textContent = "Proszę wypełnić wszystkie wymagane pola (imię i email).";
@@ -30,19 +18,17 @@ document.addEventListener("submit", function (event) {
         return;
     }
 
-    let dane = {
-        imie: imie,
-        email: email,
-        temat: temat,
-        wiadomosc: wiadomosc
-    };
 
     komunikat.textContent = `Dziękuję za wiadomość ${dane.imie} w temacie ${dane.temat}.`;
+    komunikat.style.color = "var(--success)";
     document.querySelector("form").reset();
 });
 
+/**
+ * Zmienia motyw strony.
+ */
 let zmienMotywBtn = document.querySelector("#zmien-motyw");
-zmienMotywBtn.addEventListener("click", function () {
+zmienMotywBtn.addEventListener("click", (event) => {
     if (document.documentElement.getAttribute("data-theme") === "light") {
         document.documentElement.setAttribute("data-theme", "dark");
     } else {
