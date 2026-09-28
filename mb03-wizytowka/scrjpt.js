@@ -1,6 +1,7 @@
 import { wyswietlUmiejetnosci } from "./display-skills.js";
 
-wyswietlUmiejetnosci();
+const lista = document.querySelector("#lista-umiejetnosci");
+lista.innerHTML = wyswietlUmiejetnosci();
 
 let komunikat = document.querySelector("#komunikat");
 

@@ -1,10 +1,15 @@
 import { umiejetnosci } from "./data.js";
 
-export function wyswietlUmiejetnosci() {
-    let listaUmiejetnosci = document.querySelector("#lista-umiejetnosci");
-    for (let umiejetnosc of umiejetnosci) {
-        let li = document.createElement("li");
-        li.textContent = umiejetnosc;
-        listaUmiejetnosci.appendChild(li);
-    }
-}
+
+export const wyswietlUmiejetnosci = () =>
+    umiejetnosci.map(({nazwa, poziom}) =>
+        `
+            <li>
+                <span class="nazwa">${nazwa}</span>
+                <span class="poziom" title="Poziom ${poziom} z 5" style="margin-left: 20px;">
+                    ${"O".repeat(poziom)}
+                    ${"o".repeat(5-poziom)}
+                </span>
+            </li>
+            `
+        ).join("");
