@@ -134,3 +134,15 @@ input:focus, textarea:focus, select:focus, button:focus {
     outline: 2px solid rgba(0,154,192,0.15);
     outline-offset: 1x;
 }
+
+#lista-umiejetnosci li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+}
+#lista-umiejetnosci .poziom {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #0b5ed7;
+}

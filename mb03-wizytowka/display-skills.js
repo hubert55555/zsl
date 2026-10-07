@@ -7,8 +7,7 @@ export const wyswietlUmiejetnosci = () =>
             <li>
                 <span class="nazwa">${nazwa}</span>
                 <span class="poziom" title="Poziom ${poziom} z 5" style="margin-left: 20px;">
-                    ${"O".repeat(poziom)}
-                    ${"o".repeat(5-poziom)}
+                    ${"●".repeat(poziom)}${"○".repeat(5-poziom)}
                 </span>
             </li>
             `
