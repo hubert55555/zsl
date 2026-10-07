@@ -1,7 +1,31 @@
-import { wyswietlUmiejetnosci } from "./display-skills.js";
+import { umiejetnosci } from "./data.js";
+import { budujListe, filtrujPoKategorii, podsumowanie } from "./display-skills.js";
 
-const lista = document.querySelector("#lista-umiejetnosci");
-lista.innerHTML = wyswietlUmiejetnosci();
+const podsumowanieEl = document.querySelector("#podsumowanie");
+const filtryEl = document.querySelector("#filtry");
+
+
+const pokazUmiejetnosci = (kategoria = "wszystkie") => {
+    const wybrane = filtrujPoKategorii(umiejetnosci, kategoria);
+    listaEl.innerHTML = budujListe(wybrane);
+    podsumowanieEl.textContent = podsumowanie(wybrane);
+};
+
+const listaEl = document.querySelector("#lista-umiejetnosci");
+listaEl.innerHTML = budujListe(umiejetnosci);
+
+filtryEl.addEventListener("click", (event) => {
+    const przycisk = event.target.closest("button");
+    if (!przycisk) {
+        return;
+    }
+    filtryEl.querySelectorAll("button").forEach(b =>
+        b.classList.remove("aktywny"));
+    przycisk.classList.add("aktywny");
+    pokazUmiejetnosci(przycisk.dataset.kategoria);
+});
+
+pokazUmiejetnosci();
 
 let komunikat = document.querySelector("#komunikat");
 
