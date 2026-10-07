@@ -5,6 +5,12 @@ const podsumowanieEl = document.querySelector("#podsumowanie");
 const filtryEl = document.querySelector("#filtry");
 
 
+/**
+ * Wyświetla umiejętności z wybranej kategorii i aktualizuje podsumowanie.
+ *
+ * @param {string} [kategoria="wszystkie"] - nazwa kategorii albo "wszystkie"
+ * @returns {void}
+ */
 const pokazUmiejetnosci = (kategoria = "wszystkie") => {
     const wybrane = filtrujPoKategorii(umiejetnosci, kategoria);
     listaEl.innerHTML = budujListe(wybrane);
@@ -63,6 +69,13 @@ zmienMotywBtn.addEventListener("click", (event) => {
 
 const inspiracjeEl = document.querySelector("#inspiracje");
 
+/**
+ * Pobiera listę użytkowników z publicznego API.
+ *
+ * @param {string} adres - pełny adres zasobu
+ * @returns {Promise<Array<Object>>} tablica użytkowników
+ * @throws {Error} gdy serwer odpowie statusem innym niż 2xx
+ */
 const pobierzUzytkownikow = async (adres) => {
     const odpowiedz = await fetch(adres);
 
@@ -73,6 +86,11 @@ const pobierzUzytkownikow = async (adres) => {
     return odpowiedz.json();
 };
 
+/**
+ * Pobiera osoby z API i wyświetla je w sekcji „Inspiracje” wraz ze stanem ładowania i błędu.
+ *
+ * @returns {Promise<void>} obietnica spełniona po wyświetleniu listy albo komunikatu o błędzie
+ */
 const pokazInspiracje = async () => {
     inspiracjeEl.innerHTML = `<p class="ladowanie">Ładowanie…</p>`;
 
