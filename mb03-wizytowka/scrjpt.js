@@ -1,4 +1,4 @@
-import { umiejetnosci } from "./data.js";
+import { umiejetnosci, ADRES_API } from "./data.js";
 import { budujListe, filtrujPoKategorii, podsumowanie } from "./display-skills.js";
 
 const podsumowanieEl = document.querySelector("#podsumowanie");
@@ -60,3 +60,46 @@ zmienMotywBtn.addEventListener("click", (event) => {
         document.documentElement.setAttribute("data-theme", "light");
     }
 });
+
+const inspiracjeEl = document.querySelector("#inspiracje");
+
+const pobierzUzytkownikow = async (adres) => {
+    const odpowiedz = await fetch(adres);
+
+    if (!odpowiedz.ok) {
+        throw new Error(`Serwer odpowiedział: ${odpowiedz.status}`);
+    }
+
+    return odpowiedz.json();
+};
+
+const pokazInspiracje = async () => {
+    inspiracjeEl.innerHTML = `<p class="ladowanie">Ładowanie…</p>`;
+
+    try {
+        const uzytkownicy = await pobierzUzytkownikow(ADRES_API);
+
+        inspiracjeEl.innerHTML = `
+            <ul class="osoby">
+                ${uzytkownicy
+                    .map(({ name, address }) => `
+                        <li>
+                            <strong>${name}</strong>
+                            <span>${address.city}</span>
+                        </li>
+                    `)
+                    .join("")}
+            </ul>
+        `;
+    } catch (blad) {
+        console.error("Nie udało się pobrać danych:", blad.message);
+        inspiracjeEl.innerHTML = `
+            <p class="blad">
+                Nie udało się pobrać danych z serwera. Sprawdź połączenie
+                z internetem i odśwież stronę.
+            </p>
+        `;
+    }
+};
+
+pokazInspiracje();

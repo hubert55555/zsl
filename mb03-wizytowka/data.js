@@ -8,3 +8,5 @@ export const umiejetnosci = [
     {nazwa: "VS Code", poziom: 4, kategoria: "narzedzia"},
     {nazwa: "Praca w zespole", poziom: 3, kategoria: "miekkie"}
 ];
+
+export const ADRES_API = "https://jsonplaceholder.typicode.com/users";
