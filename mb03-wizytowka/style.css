@@ -135,16 +135,27 @@ input:focus, textarea:focus, select:focus, button:focus {
     outline-offset: 1x;
 }
 
+#lista-umiejetnosci {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
 #lista-umiejetnosci li {
     display: flex;
     flex-direction: column;
     gap: 2px;
     align-items: flex-start;
+    background-color: var(--background);
+    border: 1px solid var(--secondary);
+    border-radius: 14px;
+    padding: 6px 14px;
 }
 #lista-umiejetnosci .poziom {
     font-size: 12px;
     letter-spacing: 2px;
-    color: #0b5ed7;
+    color: var(--accent);
 }
 #filtry {
     display: flex;
@@ -153,22 +164,25 @@ input:focus, textarea:focus, select:focus, button:focus {
     margin-bottom: 14px;
 }
 #filtry button {
-    background-color: #ffffff;
-    color: #0b5ed7;
+    background-color: var(--background-light);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
     padding: 5px 12px;
     font-size: 14px;
+    cursor: pointer;
     align-self: auto;
 }
 #filtry button:hover {
-    background-color: #eef3fb;
+    background-color: var(--background);
 }
 #filtry button.aktywny {
-    background-color: #0b5ed7;
-    color: #ffffff;
+    background-color: var(--accent);
+    color: white;
 }
 #podsumowanie {
     margin: 0 0 12px 0;
-    color: #555555;
+    color: var(--secondary);
     font-size: 14px;
 }
 
