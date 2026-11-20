@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+
 const PLIK = path.join(import.meta.dirname, "zadania.json");
 
 export const wczytaj = async () => {
