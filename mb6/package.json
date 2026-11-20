@@ -1,7 +1,7 @@
 {
-  "name": "mb6",
+  "name": "mb7",
   "version": "1.0.0",
-  "description": "Serwer katalogu gier planszowych",
+  "description": "Rozbudowany serwer katalogu gier planszowych",
   "main": "serwer.js",
   "scripts": {
     "start": "node serwer.js",
